@@ -155,16 +155,22 @@ var setStorageByChainId = function setStorageByChainId(chainId, key, data) {
 ;// CONCATENATED MODULE: ./src/pages/trade/data/index.ts
 
 
-var marketSelectionSelector = (0,es/* selectorFamily */.CG)({
+var marketSelectionAtom = (0,es/* atom */.cn)({
   key: 'marketSelection',
+  "default": undefined
+});
+var marketSelectionSelector = (0,es/* selectorFamily */.CG)({
+  key: 'marketSelectionSelector',
   get: function get(chainId) {
-    return function () {
-      return getStorageByChainId(chainId, MARKET_SELECTION_KEY);
+    return function (_ref) {
+      var get = _ref.get;
+      return getStorageByChainId(chainId, MARKET_SELECTION_KEY) || get(marketSelectionAtom);
     };
   },
   set: function set(chainId) {
-    return function (_ref, value) {
-      var set = _ref.set;
+    return function (_ref2, value) {
+      var set = _ref2.set;
+      set(marketSelectionAtom, value);
       setStorageByChainId(chainId, MARKET_SELECTION_KEY, value);
     };
   }
@@ -5217,6 +5223,7 @@ var Trade = function Trade() {
     if (markets && markets.length > 0) {
       if (!marketSelection) {
         setMarketSelection(markets[0]);
+        return;
       }
       var hasExist = markets.find(function (i) {
         return i.name === (marketSelection === null || marketSelection === void 0 ? void 0 : marketSelection.name) && i.address === marketSelection.address;
@@ -5233,6 +5240,8 @@ var Trade = function Trade() {
   function onChangeMarketSelection(m) {
     setMarketSelection(m);
   }
+  console.log('markets', markets);
+  console.log('marketSelection', marketSelection);
   if (!marketSelection) {
     return /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {});
   }
