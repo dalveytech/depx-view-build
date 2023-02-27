@@ -1,4 +1,4 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[65],{93055:function(R0,Q,l){l.r(Q),l.d(Q,{default:function(){return W0}});var K=l(17061),T=l.n(K),q=l(17156),Z=l.n(q),e0=l(27424),h=l.n(e0),t0=l(34713),t=l(62435),O=l(59734),M0=l(42122),G=l.n(M0),S=l(36493),i0=function(){var i=new Date().getTime(),M=i-24*60*60*1e3;return{to:i,from:M}},a0=function(){var a=Z()(T()().mark(function i(){var M,N,I;return T()().wrap(function(r){for(;;)switch(r.prev=r.next){case 0:return M=`
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[65],{93055:function(R0,Q,l){l.r(Q),l.d(Q,{default:function(){return W0}});var K=l(17061),T=l.n(K),q=l(17156),Z=l.n(q),e0=l(27424),h=l.n(e0),t0=l(34713),t=l(62435),O=l(59734),M0=l(42122),G=l.n(M0),S=l(28722),i0=function(){var i=new Date().getTime(),M=i-24*60*60*1e3;return{to:i,from:M}},a0=function(){var a=Z()(T()().mark(function i(){var M,N,I;return T()().wrap(function(r){for(;;)switch(r.prev=r.next){case 0:return M=`
   query MyQuery {
     summaries {
       openInterest
